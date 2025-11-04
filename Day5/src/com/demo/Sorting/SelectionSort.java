@@ -21,6 +21,9 @@ public class SelectionSort {
 		}
 		System.out.println(Arrays.toString(arr));
 	}
+	
+	
+	
 	private static int findMax(int[] arr, int start) {
 		int maxpos = start;
 		int max = arr[maxpos];
