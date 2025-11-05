@@ -2,7 +2,7 @@ package com.demo.test;
 
 import com.demo.beans.SinglyLinkedList;
 
-public class TestLinkedList {
+public class TestSingly {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,12 +13,12 @@ public class TestLinkedList {
 		ob.addNewNode(454);
 		ob.DisplayData();
 		
-//		ob.Addpos(8, 34);
-//		System.out.println("List after entering value at a given position");
-//		ob.DisplayData();
-		
-		ob.AddByValue(10, 45);
-		System.out.println("List after entering value at a given value");
+		ob.deleteByData(20);
 		ob.DisplayData();
+		
+		ob.deleteByPos(1);
+		ob.DisplayData();
+
 	}
+
 }

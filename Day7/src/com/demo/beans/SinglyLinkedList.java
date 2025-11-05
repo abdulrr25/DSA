@@ -1,5 +1,7 @@
 package com.demo.beans;
 
+import com.demo.beans.SinglyLinkedList.Node;
+
 public class SinglyLinkedList {
 	Node head;
 
@@ -12,11 +14,10 @@ public class SinglyLinkedList {
 			next = null;
 		}
 	}
-
+	
 	public SinglyLinkedList() {
-		head = null;
+		head=null;
 	}
-
 	public void addNewNode(int n) {
 		Node newNode = new Node(n);
 		if (head == null) {
@@ -77,6 +78,49 @@ public class SinglyLinkedList {
 
 		} else {
 			System.out.println("Not found");
+		}
+	}
+	public void deleteByData(int data) {
+		Node temp =head;
+		
+		if(head.data==data) {
+			head=temp.next;
+			temp.next=null;
+		}
+		else {
+			Node prev = null;
+			while(temp.data!=data && temp!=null) {
+				prev=temp;
+				temp=temp.next;
+				
+			}
+			prev.next=temp.next;
+			temp.next=null;
+		}
+	}
+	
+	public void deleteByPos(int pos) {
+		Node temp = head;
+		if(pos==1) {
+			head=temp.next;
+			temp.next=null;
+			
+		}
+		else
+		{
+			Node prev = null;
+			
+			for(int i=0;i<pos-1 && temp.next!=null;i++) {
+				prev =temp;
+				temp=temp.next;
+			}
+			if(temp!=null) {
+				prev.next=temp.next;
+				temp.next=null;
+			}
+			else {
+				System.out.println("Index Not Found");
+			}
 		}
 	}
 }
