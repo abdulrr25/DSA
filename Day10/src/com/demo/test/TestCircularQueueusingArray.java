@@ -11,8 +11,8 @@ public class TestCircularQueueusingArray {
 		ob.dequeue();
 		ob.enqueue(56);
 		ob.enqueue(65);
-		ob.enqueue(17);
 		ob.enqueue(71);
+		ob.enqueue(17);
 		ob.enqueue(67);
 		ob.dequeue();
 		

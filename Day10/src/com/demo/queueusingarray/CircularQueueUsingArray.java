@@ -7,7 +7,7 @@ public class CircularQueueUsingArray {
 	int rear;
 	
 	public CircularQueueUsingArray() {
-		arr=new int[5];
+		arr=new int[15];
 		front=-1;
 		rear=-1;
 	}
@@ -24,15 +24,10 @@ public class CircularQueueUsingArray {
 		}
 		return false;
 	}
-	public boolean isfull() {
-		if(front==0 && rear==arr.length-1) {
-			return true;
-		}
-		else if(front==rear-1) {
-			return true;
-		}
-		return false;
+	boolean isfull() {
+	    return (rear + 1) % arr.length == front;
 	}
+
 	public boolean enqueue(int num) {
 		if(!isfull()) {
 			if(front==-1) {
@@ -40,7 +35,7 @@ public class CircularQueueUsingArray {
 			}
 			rear=(rear+1)%arr.length;
 			arr[rear]=num;
-			System.out.println("Added Successfully" +num);
+			System.out.println("Added Successfully " +num);
 			return true;
 		}
 		return false;
