@@ -55,6 +55,8 @@ public class MergeSort {
 			MergeSortAssending(arr,start,mid);
 			MergeSortAssending(arr,mid+1,end);
 			merge(arr,start,mid,end);
+			System.out.println(Arrays.toString(arr));
+
 			
 		}
 	}
